@@ -81,6 +81,7 @@ function colorChange2() {
   let a = rgbToHex(Number(inp1.value), Number(inp2.value), Number(inp3.value));
   div2.style.backgroundColor = a;
   div2.innerHTML = a;
+  errMassage.innerHTML = "";
   emptyInput();
 }
 
