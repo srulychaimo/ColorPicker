@@ -6,11 +6,13 @@ const inp3 = document.querySelector("#inp3");
 const btn1 = document.getElementById("btn-1");
 const btn2 = document.getElementById("btn-2");
 const btn3 = document.getElementById("btn-3");
-const div1 = document.querySelector("#color-display");
-const div2 = document.querySelector("#color-display2");
-const div3 = document.querySelector("#color-display3");
-const favDiv = document.querySelector("#favorites-div");
+const divColorBoxes = document.getElementById("colorBoxes");
+const div1 = document.getElementById("main-color-display");
+const div2 = document.querySelector("#color-display-2");
+const favoritesDiv = document.querySelector("#favorites-div");
+
 const selectFavorites = document.querySelector("#favorites");
+
 const errMassage = document.querySelector("#errMassage");
 
 //***** Variables */
@@ -31,22 +33,17 @@ function checkInput() {
   let numberInp2 = Number(inp2.value);
   let numberInp3 = Number(inp3.value);
   if (
-    isNaN(numberInp1) ||
     numberInp1 < 0 ||
     numberInp1 > 255 ||
-    isNaN(numberInp2) ||
     numberInp2 < 0 ||
     numberInp2 > 255 ||
-    isNaN(numberInp3) ||
     numberInp3 < 0 ||
     numberInp3 > 255
   ) {
-    errMassage.innerHTML =
-      "The input must be a number that is between 0 to 255";
-    div1.style.backgroundColor = "";
-    div1.innerHTML = "";
-    div2.style.backgroundColor = "";
-    div2.innerHTML = "";
+    errMassage.innerHTML = "The number must be between 0 to 255";
+    favoritesDiv.classList.add("d-none");
+    div1.classList.add("d-none");
+    div2.classList.add("d-none");
     return false;
   } else {
     return true;
@@ -65,8 +62,9 @@ function colorChange1() {
   if (!checkInput()) {
     return;
   }
-
   let a = rgbToHex(Number(inp1.value), Number(inp2.value), Number(inp3.value));
+  div2.classList.add("d-none");
+  div1.classList.remove("d-none");
   div1.style.backgroundColor = a;
   div1.innerHTML = a;
   errMassage.innerHTML = "";
@@ -77,8 +75,8 @@ function colorChange2() {
   if (!checkInput()) {
     return;
   }
-
   let a = rgbToHex(Number(inp1.value), Number(inp2.value), Number(inp3.value));
+  div2.classList.remove("d-none");
   div2.style.backgroundColor = a;
   div2.innerHTML = a;
   errMassage.innerHTML = "";
@@ -95,6 +93,7 @@ function addToFavorites() {
   if (!checkInput()) {
     return;
   }
+  favoritesDiv.classList.remove("d-none");
   let a = rgbToHex(Number(inp1.value), Number(inp2.value), Number(inp3.value));
 
   const selectFavorites = document.querySelector("#favorites");
@@ -104,7 +103,6 @@ function addToFavorites() {
       return;
     }
   }
-
   selectFavorites.innerHTML += `<option value=${a}>fav ${numberCounter++} - ${a}</option>`;
   emptyInput();
 }
@@ -113,5 +111,8 @@ function myFavorite() {
   if (!selectFavorites.value) {
     return;
   }
-  div3.style.backgroundColor = selectFavorites.value;
+  div2.classList.add("d-none");
+  div1.classList.remove("d-none");
+  div1.style.backgroundColor = selectFavorites.value;
+  div1.innerHTML = selectFavorites.value;
 }
