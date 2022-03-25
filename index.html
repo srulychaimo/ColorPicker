@@ -26,62 +26,75 @@
     <!-- my files -->
     <script src="./colors.js"></script>
     <script src="./script.js" defer></script>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
     <!-- main div flex -->
 
-    <div class="container">
-      <!-- the inputs -->
-      <!-- input 1 -->
-      <div>
-        <label for="inp1">R:</label>
-        <input class="mt-3" type="text" id="inp1" placeholder="color Num 1" />
+    <section
+      class="d-flex flex-column justify-content-center align-items-center main-sec"
+    >
+      <div class="d-flex flex-column align-items-center">
+        <h1>Color Picker</h1>
+        <h2>Type In The Numbers You Want To Create Your color</h2>
+        <!-- the inputs -->
+        <!-- input 1 -->
+        <div>
+          <label for="inp1">R :</label>
+          <input class="mt-3" type="number" id="inp1" />
+        </div>
+        <!-- input 2 -->
+        <div>
+          <label for="inp2">G :</label>
+          <input class="mt-3" type="number" id="inp2" />
+        </div>
+        <!-- input 3 -->
+        <div>
+          <label for="inp3">B :</label>
+          <input class="mt-3" type="number" id="inp3" />
+        </div>
       </div>
-      <!-- input 2 -->
-      <div>
-        <label for="inp1">G:</label>
-        <input class="mt-3" type="text" id="inp2" placeholder="color Num 2" />
-      </div>
-      <!-- input 3 -->
-      <div>
-        <label for="inp1">B:</label>
-        <input class="mt-3" type="text" id="inp3" placeholder="color Num 3" />
-      </div>
-
       <!--  the buttons -->
-
-      <div class="mt-3">
-        <button id="btn-1">click</button>
-        <button id="btn-2">click</button>
-        <button id="btn-3"><i class="bi bi-star-fill"></i></button>
+      <div class="mt-4 container">
+        <div class="row justify-content-center gap-2">
+          <button class="my-btn col-8 col-sm-6 col-md-4 col-lg-3" id="btn-1">
+            Click To See The Color
+          </button>
+          <button class="my-btn col-8 col-sm-6 col-md-4 col-lg-3" id="btn-2">
+            Click To See Another Color
+          </button>
+          <button class="my-btn col-8 col-sm-6 col-md-4 col-lg-3" id="btn-3">
+            Add Color To Favorites <i class="bi bi-star-fill"></i>
+          </button>
+        </div>
       </div>
 
       <!-- error massage -->
 
-      <div class="text-danger mt-3" id="errMassage"></div>
-
-      <!-- the color boxes -->
-
-      <div class="d-flex mt-3 justify-content-between">
-        <div
-          class="box mx-2 d-flex justify-content-center align-items-center rounded-circle"
-          id="color-display"
-        ></div>
-        <div
-          class="box mx-2 d-flex justify-content-center align-items-center rounded-circle"
-          id="color-display2"
-        ></div>
-      </div>
-
+      <div class="text-danger bg-white mt-3" id="errMassage"></div>
+      
       <!-- the favorites -->
-      <div class="mt-3 d-flex w-50" id="favorites-div">
-        <label class="mx-3 d-inline" for="favorites">My Favorites</label>
-        <select class="w-50" name="favorites" id="favorites">
-          <option></option>
-        </select>
+       <div class="d-none"  id="favorites-div">
+          <label  for="favorites">My Favorites</label>
+          <select name="favorites" id="favorites">
+            <option></option>
+          </select>
+        </div>   
+      <!-- the color boxes -->
+      <div class="container-lg">
+        <div class="mt-4 row justify-content-center gap-1" id="colorBoxes">
+          <div
+            class="d-none col-5 d-flex justify-content-center align-items-center"
+            id="main-color-display"
+          ></div>
+          <div
+            class="d-none col-5 d-flex justify-content-center align-items-center"
+            id="color-display-2"
+          ></div>
+        </div>
       </div>
-      <div class="box mt-3 rounded-circle" id="color-display3"></div>
-    </div>
+
+      </div> 
+    </section>
   </body>
 </html>

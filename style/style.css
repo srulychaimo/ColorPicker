@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+.main-sec {
+  min-height: 100vh;
+  -webkit-animation: color-change 12s linear infinite alternate both;
+          animation: color-change 12s linear infinite alternate both;
+}
+
+.main-sec h1, .main-sec h2, .main-sec label {
+  text-align: center;
+  font-size: 2.8rem;
+  font-family: "Acme", sans-serif;
+  color: white;
+  text-shadow: 0px 3px 2px #969696;
+}
+
+.main-sec h2 {
+  font-size: 1.5rem;
+  width: 70vw;
+  color: #ebebeb;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.main-sec label {
+  font-weight: bold;
+  font-size: 1.4em;
+  -webkit-margin-end: 3vw;
+          margin-inline-end: 3vw;
+}
+
+.main-sec input {
+  padding: 8px;
+  font-size: 16px;
+  border-width: 2px;
+  border-color: #e8e4e4;
+  color: #ffffff;
+  border-style: solid;
+  border-radius: 24px;
+  -webkit-box-shadow: 0px 0px 12px rgba(28, 28, 28, 0.8);
+          box-shadow: 0px 0px 12px rgba(28, 28, 28, 0.8);
+  text-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
+}
+
+.main-sec #inp1 {
+  background-color: #ea6262;
+}
+
+.main-sec #inp2 {
+  background-color: #62ea84;
+}
+
+.main-sec #inp3 {
+  background-color: #62bfea;
+}
+
+.main-sec .my-btn {
+  -webkit-box-shadow: 0px 10px 14px -7px #276873;
+          box-shadow: 0px 10px 14px -7px #276873;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #599bb3), to(#408c99));
+  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  background-color: #599bb3;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-shadow: 0px 1px 0px #3d768a;
+}
+
+.main-sec .my-btn:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #5bcfe4), to(#599bb3));
+  background: linear-gradient(to bottom, #5bcfe4 5%, #599bb3 100%);
+  background-color: #45b2c5;
+}
+
+.main-sec #errMassage {
+  text-align: center;
+  font-weight: bold;
+  font-family: "Source Sans Pro", sans-serif;
+  padding-inline: 20px;
+}
+
+.main-sec #main-color-display,
+.main-sec #color-display-2 {
+  height: 12vh;
+  color: white;
+  font-size: 1.3em;
+  border-radius: 20px;
+  border: 8px double #a4a4a4;
+}
+
+@-webkit-keyframes color-change {
+  0% {
+    background: #45be15;
+  }
+  100% {
+    background: #ff2c4f;
+  }
+}
+
+@keyframes color-change {
+  0% {
+    background: #45be15;
+  }
+  100% {
+    background: #ff2c4f;
+  }
+}
+/*# sourceMappingURL=style.css.map */
