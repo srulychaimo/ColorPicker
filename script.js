@@ -96,14 +96,16 @@ function addToFavorites() {
   favoritesDiv.classList.remove("d-none");
   let a = rgbToHex(Number(inp1.value), Number(inp2.value), Number(inp3.value));
 
-  const selectFavorites = document.querySelector("#favorites");
   for (const color of colors) {
     if (a === color.code.hex.toLowerCase()) {
       selectFavorites.innerHTML += `<option value=${a}>${color.color}</option>`;
+      emptyInput();
       return;
     }
   }
-  selectFavorites.innerHTML += `<option value=${a}>fav ${numberCounter++} - ${a}</option>`;
+
+  selectFavorites.innerHTML += `<option value=${a}>fav ${numberCounter++}: ${a}</option>`;
+  errMassage.innerHTML = "";
   emptyInput();
 }
 
